@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+
+p, h1, h2, div {
+    color: white;
+}

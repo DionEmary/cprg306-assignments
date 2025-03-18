@@ -29,9 +29,11 @@ export default function Page() {
     return(
         <main className="">
             <h1 className="font-bold text-5xl m-4 mb-10">Shopping List</h1>
-            <NewItem onAddItem={addItem} />
             <div className="flex flex-row">
-                <ItemList items={data} onSelect={handleItemSelect}/>
+                <div>
+                    <NewItem onAddItem={addItem} />
+                    <ItemList items={data} onSelect={handleItemSelect}/>
+                </div>
                 <MealIdeas ingredient={ingredient} />
             </div>
             <Link 

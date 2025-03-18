@@ -8,7 +8,7 @@ export default function MealIdeas({ ingredient }) {
     useEffect(() => {
         if (ingredient){ // Prevent API call if no ingredient is selected
             const fetchData = async () => {
-                const meals = await fetchMealIdeas();
+                const meals = await fetchMealIdeas(ingredient);
                 setMeals(meals);
             };
     
@@ -32,6 +32,7 @@ export default function MealIdeas({ ingredient }) {
 
 async function fetchMealIdeas(ingredient) {
     try {
+        console.log(ingredient);
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
         const data = await response.json();
         console.log(data);

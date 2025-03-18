@@ -113,7 +113,7 @@ export default function NewItem({ onAddItem }){
                         onChange={handleCategoryChange}
                         className="border-2 border-slate-500 p-2 rounded-md text-black"
                     >
-                        <option value="produce" selected>Produce</option>
+                        <option value="produce" defaultValue>Produce</option>
                         <option value="dairy">Dairy</option>
                         <option value="bakery">Bakery</option>
                         <option value="meat">Meat</option>

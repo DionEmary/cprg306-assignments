@@ -6,8 +6,11 @@ import NewItem from "./new-item.js";
 import ItemsData from "./items.json";
 import { useState } from "react";
 import MealIdeas from "./meal-ideas.js";
+import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
+    const { user } = useUserAuth();
+
     const [data, setData] = useState(ItemsData);
     const [ingredient, setIngredient] = useState("");
 
@@ -25,6 +28,15 @@ export default function Page() {
 
         setIngredient(name);
     }
+
+    if (!user) {
+        return (
+          <div>
+            <h1>Please log in to access the shopping list.</h1>
+            <Link href="/week-9">Go to Login Page</Link>
+          </div>
+        );
+      }
 
     return(
         <main className="">
